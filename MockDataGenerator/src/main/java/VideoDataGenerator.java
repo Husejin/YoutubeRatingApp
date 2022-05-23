@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Random;
 
 public class VideoDataGenerator {
-    private static int numberOfVideosToGenerate = 10;
+    private static int numberOfVideosToGenerate = 100;
     private static Connection dbConnection;
 
     public static void reloadDatabase() throws SQLException, FileNotFoundException {
         dbConnection = DBConnector.getConnection();
         ScriptRunner sr = new ScriptRunner(dbConnection);
-        Reader reader = new BufferedReader(new FileReader("C:\\Program Files\\Apache Software Foundation\\Tomcat 10.0\\webapps\\YoutubeRatingsApp2\\MockDataGenerator\\dbScripts\\bootUp.sql"));
+        Reader reader = new BufferedReader(new FileReader("C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\YoutubeRatingApp\\MockDataGenerator\\dbScripts\\bootUp.sql"));
         sr.runScript(reader);
         dbConnection.close();
     }

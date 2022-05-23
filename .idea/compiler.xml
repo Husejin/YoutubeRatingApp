@@ -7,9 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MockDataGenerator" />
+        <module name="Frontend" />
+        <module name="Backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Backend" target="1.8" />
+      <module name="Frontend" target="18" />
       <module name="MockDataGenerator" target="18" />
     </bytecodeTargetLevel>
   </component>

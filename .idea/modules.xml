@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WEB-INF/JavaBackend.iml" filepath="$PROJECT_DIR$/WEB-INF/JavaBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backend/Backend.iml" filepath="$PROJECT_DIR$/Backend/Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/MockDataGenerator/MockDataGenerator.iml" filepath="$PROJECT_DIR$/MockDataGenerator/MockDataGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rwaProject.iml" filepath="$PROJECT_DIR$/.idea/rwaProject.iml" />
     </modules>
