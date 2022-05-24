@@ -1,5 +1,5 @@
 import generateRankTableRow from "./generateRankTableRowService.js";
-let currentPage;
+let currentPage=0;
 
 async function fetchRankedVideos(limit, offset, callback, pageIndex) {
     currentPage=pageIndex;
@@ -21,7 +21,7 @@ function generateVideoRows(data) {
 
 
 export default function generateTop5Videos() {
-    fetchRankedVideos(5, 0, generateVideoRows);
+    fetchRankedVideos(5, 0, generateVideoRows,currentPage);
 }
 
 export function generateRankingPageVideos(pageIndex) {
