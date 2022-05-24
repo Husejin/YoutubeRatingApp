@@ -15,8 +15,5 @@ public static VideoEntity asVideoEntity(ResultSet results) throws SQLException {
     String thumbnailUrl = results.getString(7);
     return new VideoEntity(id,name,description,allVotes,positiveVotes,url,thumbnailUrl);
 }
-
-
-
 }
 

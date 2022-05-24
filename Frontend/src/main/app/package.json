@@ -1,0 +1,15 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pageScriptHandlers/homePageHandler.js",
+  "directories": {
+    "test": "../../test"
+  },
+  "scripts": {
+    "test": "../../test"
+  },
+  "author": "husko",
+  "license": "ISC",
+  "type": "module"
+}

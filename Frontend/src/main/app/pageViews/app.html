@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Youtube Rating
+    </title>
+    <link rel="stylesheet" href="../../styles/app.css">
+    <script src="https://kit.fontawesome.com/32096edd80.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+<div id="mainBody" class="mainBody">
+    <div class="header">
+        <div>Video voting competition</div>
+        <a class="rankingsRoute" href="rankings.html">All Rankings</a>
+        <div class="headerIcons">
+            <a href="app.html"><i class="fa fa-refresh"> </i></a>
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+    </div>
+    <div class="allVideos" id="videoPair">
+
+    </div>
+    <div class="allRankings">
+        <label>Top 5 videos</label>
+        <div class="top5Body">
+            <div class="rankHeader">
+                <div class="songTitle">Headline</div>
+                <div class="headerVotes">Votes(positive/total)</div>
+                <div class="headerVotes">Rank</div>
+            </div>
+            <div class="rankBody" id="topVideos">
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<script src="../pageScriptHandlers/homePageHandler.js" type="module"></script>

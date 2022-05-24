@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class GenerateTwoVideosService {
-    public static List<VideoEntity> fetchVideosFromDatabase() {
+    public static List<VideoEntity> fetchVideoPairFromDatabase() {
         List<VideoEntity> videoPair = new ArrayList<>();
         try {
             Connection dbConnection = DBConnector.getConnection();
@@ -26,11 +26,5 @@ public class GenerateTwoVideosService {
             e.printStackTrace();
         }
         return videoPair;
-    }
-
-    public static void generateVideoPairResponse(List<VideoEntity> videoEntities, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        Gson gson = new Gson();
-        response.getWriter().println(gson.toJsonTree(videoEntities));
     }
 }
