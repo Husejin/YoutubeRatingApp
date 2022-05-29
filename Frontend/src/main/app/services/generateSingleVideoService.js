@@ -1,4 +1,4 @@
-import generateVideoPair from "./randomVideoPairService.js";
+import generateVideoPair from "./videoPairService.js";
 
 function updateVideo(idToUpdate, idToRemain) {
     $.post("http://localhost:9090/Backend_war_exploded/updateVideoVote", {
@@ -10,6 +10,7 @@ function updateVideo(idToUpdate, idToRemain) {
 
 export default function generateSingleVideo(videoPairData, videoIndex) {
     let sv = document.createElement("div");
+    sv.setAttribute("id",videoPairData[videoIndex].id);
     sv.className = "singleVideo";
     let lbl = document.createElement("label");
     lbl.className = "videoLabel";
@@ -21,6 +22,7 @@ export default function generateSingleVideo(videoPairData, videoIndex) {
     btn.textContent = "vote";
     btn.onclick = () => {
         (videoIndex === 0) ? updateVideo(videoPairData[0].id, videoPairData[1].id) : updateVideo(videoPairData[1].id, videoPairData[0].id);
+        window.history.pushState({}, document.title, window.location.pathname);
         generateVideoPair();
     }
     sv.appendChild(lbl);

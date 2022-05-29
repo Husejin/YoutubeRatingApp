@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Random;
 
 public class VideoDataGenerator {
-    private static int numberOfVideosToGenerate = 100;
+    private static int numberOfVideosToGenerate = 100000;
+    private static int batchSize = 500;
     private static Connection dbConnection;
 
     public static void reloadDatabase() throws SQLException, FileNotFoundException {
@@ -26,26 +27,38 @@ public class VideoDataGenerator {
 
     public static void generateVideos() throws SQLException {
         dbConnection = DBConnector.getConnection();
+        for(int i=0;i<numberOfVideosToGenerate;i+=batchSize)
+        {
+        generateBatchOfVideos(i);
+        }
+        System.out.println("Videos added successfully");
+        dbConnection.close();
+    }
+    public static void generateBatchOfVideos(int batchNumber) throws SQLException {
+
         try {
             List<VideoEntity> randomVideos = new ArrayList<>();
             Statement insertVideos = dbConnection.createStatement();
             String insertVideosQuery = "INSERT INTO youtube_rankings.allVideos VALUES ";
 
-            for (int i = 0; i < numberOfVideosToGenerate; i++) {
-                VideoEntity videoToAdd = generateRandomVideo(i+1);
+            for (int i = 0; i < batchSize && i<numberOfVideosToGenerate; i++) {
+                int id = batchNumber+(i+1);
+                VideoEntity videoToAdd = generateRandomVideo(id);
                 randomVideos.add(videoToAdd);
                 insertVideosQuery += getValuesString(videoToAdd);
-                if (i + 1 < numberOfVideosToGenerate) {
+
+                if (i + 1 < batchSize && i+1<numberOfVideosToGenerate) {
                     insertVideosQuery += ", ";
                 }
+                System.out.println("Generated "+(id)+" videos");
             }
             insertVideosQuery += ";";
             dbConnection.prepareStatement(insertVideosQuery).executeUpdate();
-            System.out.println("Videos added successfully");
+
         } catch (SQLException s) {
             s.printStackTrace();
         }
-        dbConnection.close();
+
     }
 
     private static String getValuesString(VideoEntity entity) {

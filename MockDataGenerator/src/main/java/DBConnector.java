@@ -6,7 +6,7 @@ public class DBConnector {
 
     private static String url = "jdbc:mysql://localhost:3306/youtube_rankings";
     private static String username = "root";
-    private static String password = "";
+    private static String password = "SlimShady33ffxx252525";
 
     public static Connection getConnection() throws SQLException {
         Connection connection = null;

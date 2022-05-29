@@ -26,6 +26,11 @@ export default function generateTop5Videos() {
 
 export function generateRankingPageVideos(pageIndex) {
     fetchRankedVideos(20, pageIndex * 20, generateVideoRows, pageIndex);
+    //pomocu page index varijable koju koristimo kroz ranking page mozemo izracunati limit i offset koji nam treba za svaki zaseban page
+    // kako bi svaki
+    //put kad dohvatimo listu videa iz baze dobili tacno 20 videa..
+    //takodjer listu videa dohvatamo tek na klik dugmeta da predjemo na sledeci page
+    //S tim u vidim mislim da ne bi trebali gubiti brzinu i performanse s povecanjem broja videa u bazi.
 }
 
 

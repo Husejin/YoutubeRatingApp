@@ -14,6 +14,6 @@ public class GenerateTwoVideos extends HttpServlet {
     public void doGet(
             HttpServletRequest request,
             HttpServletResponse response) throws IOException {
-         CommonVideosService.generateVideosResponse(GenerateTwoVideosService.fetchVideoPairFromDatabase(),response);
+         CommonVideosService.generateVideosResponse(GenerateTwoVideosService.fetchRandomVideoPairFromDatabase(),response);
     }
 }
