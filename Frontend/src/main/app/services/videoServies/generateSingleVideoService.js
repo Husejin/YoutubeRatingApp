@@ -7,7 +7,12 @@ function updateVideo(idToUpdate, idToRemain) {
     }, () => {
     });
 }
-
+export async function fetchSpecificVideo(videoId,callback)
+{
+    $.get("http://localhost:9090/Backend_war_exploded/generateSpecificVideo", {
+        id: videoId
+    }, callback)
+}
 export default function generateSingleVideo(videoPairData, videoIndex) {
     let sv = document.createElement("div");
     sv.setAttribute("id",videoPairData[videoIndex].id);

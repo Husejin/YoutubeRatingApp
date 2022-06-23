@@ -1,11 +1,11 @@
 public class VideoEntity {
-    int id;
-    String name;
-    String description;
-    int allVotes;
-    int positiveVotes;
-    String url;
-    String thumbnailUrl;
+    private int id;
+    private String name;
+    private String description;
+    private int allVotes;
+    private int positiveVotes;
+    private String url;
+    private String thumbnailUrl;
 
     public VideoEntity(String name, String description, int allVotes, int positiveVotes, String url, String thumbnailUrl) {
 

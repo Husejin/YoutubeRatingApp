@@ -17,6 +17,17 @@ public class CommonVideosService {
         Gson gson = new Gson();
         response.getWriter().println(gson.toJsonTree(videoEntities));
     }
+    public static void generateVideosResponse(VideoEntity videoEntity, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+        Gson gson = new Gson();
+        response.getWriter().println(gson.toJson(videoEntity));
+    }
+
+    public static void generateLoginResponse(LoginResponse loginResponse, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+        Gson gson = new Gson();
+        response.getWriter().println(gson.toJson(loginResponse));
+    }
     
     public static Map<String, String[]> getRequestParameters(HttpServletRequest req)
     {

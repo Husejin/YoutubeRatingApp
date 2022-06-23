@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 public class VideoDataGenerator {
-    private static int numberOfVideosToGenerate = 100000;
+    private static int numberOfVideosToGenerate = 100;
     private static int batchSize = 500;
     private static Connection dbConnection;
 

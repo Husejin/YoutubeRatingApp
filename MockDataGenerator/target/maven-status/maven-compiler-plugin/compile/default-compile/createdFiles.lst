@@ -1,5 +1,9 @@
+UserRoles$UserRole.class
 VideoEntity.class
 VideoResources.class
 Main.class
-DBConnector.class
+UsersDataGenerator.class
+UserRoles.class
 VideoDataGenerator.class
+DBConnector.class
+UserEntity.class
