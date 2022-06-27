@@ -10,7 +10,7 @@ export default function generateRankTableRow(videoData, videoIndex, pageIndex) {
     let headlineInfo = document.createElement("div");
     headlineInfo.className = "headlineInfo";
     let thumbnail = document.createElement("img");
-    thumbnail.src = videoData.thumbnailUrl;
+    thumbnail.src = (videoData.alternateImage) ?  `data:image/png;base64,${videoData.alternateImage}` :  videoData.thumbnailUrl;
     let songTitle = document.createElement("div");
     songTitle.className = "songTitle";
     songTitle.textContent = videoData.name;

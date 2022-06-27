@@ -1,13 +1,16 @@
 package com.example.backend;
 
+import java.sql.Blob;
+
 public class VideoEntity {
-    int id;
-    String name;
-    String description;
-    int allVotes;
-    int positiveVotes;
-    String url;
-    String thumbnailUrl;
+    private  int id;
+    private  String name;
+    private  String description;
+    private  int allVotes;
+    private  int positiveVotes;
+    private String url;
+    private String thumbnailUrl;
+    private String alternateImage;
 
     public VideoEntity(String name, String description, int allVotes, int positiveVotes, String url, String thumbnailUrl) {
 
@@ -19,7 +22,7 @@ public class VideoEntity {
         this.thumbnailUrl = thumbnailUrl;
     }
 
-    public VideoEntity(int id, String name, String description, int allVotes, int positiveVotes, String url, String thumbnailUrl) {
+    public VideoEntity(int id, String name, String description, int allVotes, int positiveVotes, String url, String thumbnailUrl, String alternateImage) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,6 +30,7 @@ public class VideoEntity {
         this.positiveVotes = positiveVotes;
         this.url = url;
         this.thumbnailUrl = thumbnailUrl;
+        this.alternateImage = alternateImage;
     }
 
     public int getId() {
@@ -83,5 +87,13 @@ public class VideoEntity {
 
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public String getAlternateImage() {
+        return alternateImage;
+    }
+
+    public void setAlternateImage(String alternateImage) {
+        this.alternateImage = alternateImage;
     }
 }

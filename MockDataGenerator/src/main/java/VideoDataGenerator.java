@@ -27,13 +27,13 @@ public class VideoDataGenerator {
 
     public static void generateVideos() throws SQLException {
         dbConnection = DBConnector.getConnection();
-        for(int i=0;i<numberOfVideosToGenerate;i+=batchSize)
-        {
-        generateBatchOfVideos(i);
+        for (int i = 0; i < numberOfVideosToGenerate; i += batchSize) {
+            generateBatchOfVideos(i);
         }
         System.out.println("Videos added successfully");
         dbConnection.close();
     }
+
     public static void generateBatchOfVideos(int batchNumber) throws SQLException {
 
         try {
@@ -41,16 +41,16 @@ public class VideoDataGenerator {
             Statement insertVideos = dbConnection.createStatement();
             String insertVideosQuery = "INSERT INTO youtube_rankings.allVideos VALUES ";
 
-            for (int i = 0; i < batchSize && i<numberOfVideosToGenerate; i++) {
-                int id = batchNumber+(i+1);
+            for (int i = 0; i < batchSize && i < numberOfVideosToGenerate; i++) {
+                int id = batchNumber + (i + 1);
                 VideoEntity videoToAdd = generateRandomVideo(id);
                 randomVideos.add(videoToAdd);
                 insertVideosQuery += getValuesString(videoToAdd);
 
-                if (i + 1 < batchSize && i+1<numberOfVideosToGenerate) {
+                if (i + 1 < batchSize && i + 1 < numberOfVideosToGenerate) {
                     insertVideosQuery += ", ";
                 }
-                System.out.println("Generated "+(id)+" videos");
+                System.out.println("Generated " + (id) + " videos");
             }
             insertVideosQuery += ";";
             dbConnection.prepareStatement(insertVideosQuery).executeUpdate();
@@ -68,7 +68,8 @@ public class VideoDataGenerator {
         valueString += entity.getAllVotes() + ",";
         valueString += entity.getPositiveVotes() + ",";
         valueString += "'" + entity.getUrl() + "',";
-        valueString += "'" + entity.getThumbnailUrl() + "')";
+        valueString += "'" + entity.getThumbnailUrl() + "',";
+        valueString += "null)";
         return valueString;
     }
 

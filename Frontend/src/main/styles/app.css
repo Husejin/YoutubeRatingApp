@@ -172,3 +172,43 @@
 
 }
 
+.loginBody {
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.loginForm {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm label {
+    margin-top: 15px;
+
+}
+
+.loginForm input {
+    height: 20px;
+}
+
+#signInButton {
+    margin-top: 20px;
+
+}
+
+#createButton, #updateButton {
+    margin-top: 20px;
+    width: 20%;
+    margin-left: 40%;
+    height: 30px;
+}
+
+#alternateImage {
+    width: 150px;
+    height: 200px;
+}
+

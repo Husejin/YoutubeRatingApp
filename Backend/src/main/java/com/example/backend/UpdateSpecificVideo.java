@@ -21,7 +21,11 @@ public class UpdateSpecificVideo extends HttpServlet {
         Gson gson = new Gson();
         VideoEntity videoToUpdate = gson.fromJson(parameters.get("videoInfo")[0],VideoEntity.class);
         try {
-            UpdateSpecificVideoService.persistVideo(videoToUpdate);
+            if ((videoToUpdate.getAlternateImage() != null)) {
+                UpdateSpecificVideoService.persistVideoWithAlternateImage(videoToUpdate);
+            } else {
+                UpdateSpecificVideoService.persistVideo(videoToUpdate);
+            }
             CommonVideosService.generateVideosResponse(videoToUpdate,resp);
         } catch (SQLException e) {
             e.printStackTrace();

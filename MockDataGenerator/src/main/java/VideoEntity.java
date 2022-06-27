@@ -1,3 +1,5 @@
+import java.sql.Blob;
+
 public class VideoEntity {
     private int id;
     private String name;
@@ -6,7 +8,7 @@ public class VideoEntity {
     private int positiveVotes;
     private String url;
     private String thumbnailUrl;
-
+    private byte[] alternateImage;
     public VideoEntity(String name, String description, int allVotes, int positiveVotes, String url, String thumbnailUrl) {
 
         this.name = name;
@@ -71,5 +73,13 @@ public class VideoEntity {
 
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public byte[] getAlternateImage() {
+        return alternateImage;
+    }
+
+    public void setAlternateImage(byte[] alternateImage) {
+        this.alternateImage = alternateImage;
     }
 }

@@ -16,6 +16,7 @@ CREATE TABLE `allVideos`
     `positiveVotes` INT unsigned DEFAULT '0',
     `url`           TEXT(200),
     `thumbnailUrl`  TEXT(200),
+    `alternateImage` LONGBLOB,
     PRIMARY KEY (`id`)
 );
 DROP TABLE IF EXISTS users;
