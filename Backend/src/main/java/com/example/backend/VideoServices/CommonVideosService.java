@@ -1,5 +1,6 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
 
+import com.example.backend.UserServices.LoginResponse;
 import com.google.gson.Gson;
 
 import javax.servlet.http.HttpServletRequest;

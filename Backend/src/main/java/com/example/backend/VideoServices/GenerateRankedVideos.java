@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
 
 
 import javax.servlet.annotation.WebServlet;

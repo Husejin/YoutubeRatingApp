@@ -1,5 +1,7 @@
-package com.example.backend;
+package com.example.backend.UserServices;
 
+
+import com.example.backend.VideoServices.CommonVideosService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

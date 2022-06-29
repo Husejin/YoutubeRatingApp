@@ -1,4 +1,6 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
+
+import com.example.backend.DBConnector;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

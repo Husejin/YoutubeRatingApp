@@ -1,4 +1,6 @@
-package com.example.backend;
+package com.example.backend.UserServices;
+
+import com.example.backend.DBConnector;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,6 +22,8 @@ public class LoginUserService {
         if (matchingUsers.next()) {
             int userRoleIntValue = matchingUsers.getInt(4);
             String userRole = String.valueOf(UserRoles.UserRole.values()[userRoleIntValue]);
+
+
             loginResponse.setRole(userRole);
             loginResponse.setStatus("SUCCESS");
         }

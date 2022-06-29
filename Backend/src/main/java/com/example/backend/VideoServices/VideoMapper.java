@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
 
 import java.sql.Blob;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.example.backend.UserServices;
 
 public class LoginResponse {
     String status;

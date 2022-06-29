@@ -1,4 +1,6 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
+
+import com.example.backend.DBConnector;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +11,7 @@ public class CreateVideoService {
     private static Connection connection;
 
     public static VideoEntity createVideo(VideoEntity videoEntity) throws SQLException {
-        connection=DBConnector.getConnection();
+        connection= DBConnector.getConnection();
         String createVideoString = "INSERT INTO allvideos VALUES (?,?,?,?,?,?,?,?);";
 
         PreparedStatement createVideoQuery = connection.prepareStatement(createVideoString);
