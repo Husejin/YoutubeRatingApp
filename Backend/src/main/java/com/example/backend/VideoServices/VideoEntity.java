@@ -1,6 +1,5 @@
-package com.example.backend;
+package com.example.backend.VideoServices;
 
-import java.sql.Blob;
 
 public class VideoEntity {
     private  int id;
