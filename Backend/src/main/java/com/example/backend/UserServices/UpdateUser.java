@@ -3,6 +3,7 @@ package com.example.backend.UserServices;
 import com.example.backend.VideoServices.CommonVideosService;
 import com.google.gson.Gson;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 
+@WebServlet (value = "/updateUser")
 public class UpdateUser extends HttpServlet {
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

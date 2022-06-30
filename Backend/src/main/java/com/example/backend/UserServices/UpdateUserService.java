@@ -12,11 +12,12 @@ public class UpdateUserService {
 
     public static void persistUser(UserEntity userEntity) throws SQLException {
         connection = DBConnector.getConnection();
-        String updateUserString = "UPDATE users SET username=? , password=?, role=?;";
+        String updateUserString = "UPDATE users SET username=? , password=?, role=? WHERE id=?;";
         PreparedStatement updateUserQuery = connection.prepareStatement(updateUserString);
         updateUserQuery.setString(1,userEntity.getUsername());
         updateUserQuery.setString(2,userEntity.getPassword());
         updateUserQuery.setInt(3,userEntity.getRole().ordinal());
+        updateUserQuery.setInt(4,userEntity.getId());
         updateUserQuery.executeUpdate();
         connection.close();
     }

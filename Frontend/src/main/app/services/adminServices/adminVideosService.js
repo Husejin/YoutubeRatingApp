@@ -11,7 +11,7 @@ function generateVideoRows(data) {
     let topVideos = JSON.parse(data);
     let rankBodyDiv = document.getElementById("topVideos");
     rankBodyDiv.innerHTML = "";
-    if (topVideos.length != 0) {
+    if (topVideos.length !== 0) {
         for (let i = 0; i < topVideos.length; i++) {
             rankBodyDiv.appendChild(generateAdminTableRow(topVideos[i], i, currentPage));
         }

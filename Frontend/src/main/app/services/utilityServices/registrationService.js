@@ -30,7 +30,7 @@ function registerUserCallback(data) {
     if (registerResponse.username !== '#') {
         console.log(data);
         alert("Registration successful");
-        location.href = "login.html";
+        location.href = "adminHome.html";
     } else {
         alert("Registration could not be performed!");
     }
